@@ -1,0 +1,18 @@
+{
+  "befundID": "qgursxxxxxxxxxxxxxxxxx",
+  "befundErstellungsdatum": 1789987441000,
+  "letzteBearbeitungsdatum": 1789987441000,
+  "auftragsnummer": "H/2026/012345",
+  "patientennummer": "1234567",
+  "fallnummer": "12345678",
+  "befundtyp": "Hauptbefund",
+  "mikroskopischerBefund": "HE-Färbung\r\n\r\n",
+  "makroskopischerBefund": "Alles gut \r\n\r\n",
+  "diagnoseConclusionBefund": "Alles gut\r\n\r\n\r\n",
+  "tNM": null,
+  "sonstigesBefund": null,
+  "probename": "X TE",
+  "probeID": "H2026012345S1",
+  "probeEntnahmedatum": 1789987441000,
+  "auftragsgeberFABCode": "IDIST041"
+}

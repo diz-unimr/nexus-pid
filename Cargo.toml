@@ -1,0 +1,46 @@
+[package]
+name = "nexus-pid"
+version = "0.1.0"
+edition = "2024"
+license = "AGPL-3.0"
+description = "Application to fetch PID for given Nexus ID from Kafka"
+
+[dependencies]
+clap = { version = "4.6", features = ["derive", "env"] }
+log = "0.4"
+axum = { version = "0.8", features = ["tracing"] }
+tracing = "0.1"
+tracing-subscriber = "0.3"
+tokio = { version = "1.53", features = ["rt-multi-thread", "macros", "time", "signal"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+rdkafka = { version = "0.39", features = ["cmake-build", "libz-static", "ssl-vendored", "curl-static"] }
+cron = "0.17"
+chrono = "0.4"
+
+[dev-dependencies]
+tower = "0.5"
+http-body-util = "0.1"
+mockall = "0.15"
+rstest = "0.27"
+httpmock = "0.8"
+
+# Lints
+
+[lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
+pedantic = { level = "warn", priority = -1 }
+
+[lints.rust]
+unused_must_use = "deny"
+
+# Profiles
+
+[profile.release]
+opt-level = "s"
+codegen-units = 1
+lto = "thin"
+strip = true
+panic = "abort"
