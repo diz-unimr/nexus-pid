@@ -5,6 +5,24 @@ Ziel ist es, die zugehörige PatientenID anhand einer Nexus-Befund-ID aus einem 
 Hierzu werden alle Records beim Starten der Anwendung eingelesen, neu eingehende Records zu den vorhandenen Records
 hinzugefügt und eine REST-Schnittstelle zum Abrufen der PatientenID anhand einer Nexus-Befund-ID bereitgestellt.
 
+# Nutzung
+
+Der folgende Aufruf führt zu der gezeigten beispielhaften Antwort.
+
+```
+curl -v http://.../?id=qgursxxxxxxxxxxxxxxxxx
+```
+
+```
+HTTP/1.1 200 OK
+content-length: 9
+date: Tue, 22 Sep 2026 16:11:52 GMT
+
+123456789
+```
+
+Im Falle einer nicht gefundenen Nexus-Befund-ID wird HTTP 404 zurückgegeben.
+
 # Konfiguration
 
 ## Konsole-Parameter
