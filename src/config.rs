@@ -23,7 +23,7 @@ pub(crate) struct Config {
     #[arg(
         long,
         env = "KAFKA_GROUP_ID",
-        default_value = "nexis-pid",
+        default_value = "patho-nexus-psn-pid",
         help = "Kafka Group ID"
     )]
     pub group_id: String,

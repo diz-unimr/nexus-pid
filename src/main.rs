@@ -43,7 +43,7 @@ impl DataStore {
         self.data
             .write()
             .await
-            .insert(data.befund_id.clone(), data.clone());
+            .insert(data.nexus_psn_id.clone(), data.clone());
     }
 
     async fn len(&self) -> usize {
@@ -62,10 +62,10 @@ struct IdQuery {
 
 #[derive(Clone, Debug, Deserialize)]
 pub struct Data {
-    #[serde(rename = "befundID")]
-    pub befund_id: String,
-    #[serde(rename = "patientennummer")]
-    pub patientennummer: String,
+    #[serde(rename = "nexus_psn_id")]
+    pub nexus_psn_id: String,
+    #[serde(rename = "pid")]
+    pub pid: String,
 }
 
 async fn connect(config: Config, tx: tokio::sync::mpsc::Sender<Data>) -> Result<(), ()> {
@@ -129,7 +129,7 @@ async fn handle_request(
     Extension(data_store): Extension<DataStore>,
 ) -> Response {
     if let Some(data) = data_store.find(&query.id).await {
-        return Response::new(data.patientennummer.into());
+        return Response::new(data.pid.into());
     }
     Response::builder()
         .status(StatusCode::NOT_FOUND)
