@@ -36,9 +36,9 @@ Options:
       --bootstrap-servers <BOOTSTRAP_SERVERS>
           Kafka Bootstrap Server [env: KAFKA_BOOTSTRAP_SERVERS=] [default: kafka:9094]
       --topic <TOPIC>
-          Kafka Topic [env: KAFKA_TOPIC=]
+          Kafka Topic [env: KAFKA_TOPIC=] [default: patho-nexus-psn-pid]
       --group-id <GROUP_ID>
-          Kafka Group ID [env: KAFKA_GROUP_ID=] [default: nexis-pid]
+          Kafka Group ID [env: KAFKA_GROUP_ID=] [default: nexus-pid]
       --ssl-ca-file <SSL_CA_FILE>
           CA file for SSL connection to Kafka [env: KAFKA_SSL_CA_FILE=]
       --ssl-cert-file <SSL_CERT_FILE>

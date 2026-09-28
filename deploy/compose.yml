@@ -1,0 +1,11 @@
+services:
+  nexus-pid:
+    image: ghcr.io/diz-unimr/nexus-pid:latest
+    restart: "unless-stopped"
+    user: "65532:65532"
+    environment:
+      # Example configuration with default values
+      # Adjust as required
+      LISTEN: "[::]:3000"
+      KAFKA_BOOTSTRAP_SERVERS: "kafka:9092"
+      KAFKA_TOPIC: "patho-nexus-psn-pid"
