@@ -190,7 +190,7 @@ async fn main() {
     });
     let data_store_d = data_store.clone();
     let d = tokio::spawn(async move {
-        let schedule = Schedule::from_str("0 * * * * *").expect("invalid cron expression");
+        let schedule = Schedule::from_str("0 */15 * * * *").expect("invalid cron expression");
         loop {
             let next = schedule.upcoming(Utc).next().expect("no next execution");
 
